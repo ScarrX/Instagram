@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videonu İzləyin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://p.productioncrate.com/stock-hd/effects/footagecrate-4k-looping-network-tech-background-blue-1-prev-full.png') no-repeat center center fixed; 
+            background-size: cover; 
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .video-container {
+            background: rgba(0, 50, 100, 0.8); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            position: relative; 
+            top: 20px; 
+        }
+        h2 {
+            margin: 0;
+            font-size: 32px; 
+            font-weight: bold; 
+            color: white; 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
+        }
+        .subheading {
+            margin-top: 10px; 
+            font-size: 24px; 
+            color: white; 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
+        }
+        video {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 20px; 
+        }
+        .like-button {
+            padding: 10px 15px;
+            background-color: white; 
+            color: #007bff; 
+            border: 2px solid #007bff; 
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 24px; 
+            margin-top: 10px; 
+        }
+        .like-button.liked {
+            background-color: #007bff; 
+            color: white; 
+        }
+        .vote-text {
+            font-size: 24px; 
+            color: white; 
+            margin-right: 10px; 
+            display: inline-block; 
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <h2>Dövlət Gömrük Komitesinin Akademiyası</h2>
+        <div class="subheading">Rəhimov Əli - Nature</div> <!-- Alt başlıq -->
+        <video controls>
+            <source src="{{ url_for('static', filename='Nature.mp4') }}" type="video/mp4">
+            Sizin brauzeriniz bu videonu oynada bilmir.
+        </video>
+        <div style="margin-top: 10px;">
+            <span class="vote-text">Səs Ver</span> 
+            <button class="like-button" id="likeBtn">👍</button> 
+        </div>
+    </div>
+
+    <script>
+        const likeButton = document.getElementById('likeBtn');
+        likeButton.addEventListener('click', function() {
+            likeButton.classList.toggle('liked');
+            if (likeButton.classList.contains('liked')) {
+                likeButton.textContent = '👍'; 
+            } else {
+                likeButton.textContent = '👍'; 
+            }
+        });
+    </script>
+</body>
+</html>
